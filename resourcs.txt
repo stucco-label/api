@@ -1,0 +1,49 @@
+
+███╗   ███╗██╗   ██╗████████╗ █████╗ ████████╗██╗ ██████╗ ███╗   ██╗███████╗
+████╗ ████║██║   ██║╚══██╔══╝██╔══██╗╚══██╔══╝██║██╔═══██╗████╗  ██║██╔════╝
+██╔████╔██║██║   ██║   ██║   ███████║   ██║   ██║██║   ██║██╔██╗ ██║███████╗
+██║╚██╔╝██║██║   ██║   ██║   ██╔══██║   ██║   ██║██║   ██║██║╚██╗██║╚════██║
+██║ ╚═╝ ██║╚██████╔╝   ██║   ██║  ██║   ██║   ██║╚██████╔╝██║ ╚████║███████║
+╚═╝     ╚═╝ ╚═════╝    ╚═╝   ╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+         
+
+/////     CREATE AN ARTIST      /////
+mutation{
+  createArtist(name: "Sex Pistols ){
+    _id
+    name
+  }
+}
+
+
+
+/////     CREATE A PRODUCT      /////
+**     Join a category by category id   **
+
+mutation{
+  createProduct(input: {
+    title: "Anarcy in the UK", 
+    description: "hot", 
+    price: 18,
+    qty: 10,
+    category: "5c748fbe240877650da919a1"
+    artist: "Sex Pistols
+    }){
+  name 
+  description
+  price
+  qty
+  category {
+    _id
+    name
+ 	 }
+	}
+}
+
+//////////    CREATE A CATEGORY     //////////
+mutation{
+  createCategory( name: "Shoes" ){
+    _id
+    name
+  }
+}
